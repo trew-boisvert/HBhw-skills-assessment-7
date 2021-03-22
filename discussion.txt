@@ -1,0 +1,111 @@
+Discussion
+----------
+
+1. Which would be the most efficient data structure for a data set with the
+   following requirements:
+
+  - frequently removing and adding items to the beginning of the data structure
+
+  - frequently removing and adding items to the end of the data structure
+
+  - rarely indexing and searching
+
+  A. A Python list B. Singly linked list C. Doubly linked list
+
+  Explain your answer.
+
+A singly linked list would be the most efficient, because they have a tail, and a 
+head, so adding and removing from either end of the list is efficient.  It can be  
+done without having to move everything else in memory.  The added efficiency here
+would more than make up for the efficiency lost by having to search instead of
+index into them.
+
+
+2. Which would be the most efficient data structure for a data set with the
+   following requirements:
+
+  - order is unimportant
+
+  -frequently adding and removing items
+
+  - frequently looking up items
+
+  A. A Python list  B. A Dictionary  C. Deque  D. Binary Search Tree
+
+  Explain your answer.
+
+A dictionary would be most efficient in this case, because they can be
+keyed into for fast look-ups.  Deleting and adding can be done quickly, 
+too.  They are now ordered, where they used to be unordered, but that's
+not something we care about for this problem.  
+
+
+3. Explain why looking up, adding elements, and removing elements from a 
+   dictionary or hash map are all O(1) operations.
+
+Looking up has an O(1), or constant, runtime because elements can be keyed 
+into, meaning you can go right to the element you want without having
+to loop/iterate through. I question the O(1) assessment for adding and 
+removing elements because Python dictionaries are ordered now, and so 
+those actions could be O(n) instead.  I suppose it depends what version 
+of Python one is running.  But if you're running an old enough version that
+dictionaries are unordered, then adding and removing elements has a constant
+runtime because you don't have to shift all of the other elements in the
+memory to do them.  
+
+4. Explain why removing elements from or adding elements to an arbitrary
+   location in a Python list are O(n) operations.
+
+It's helpful to imagine a pill organizer.  There are a bunch of slots in a row,
+and each one has a pill in it.  If you want to add a pill to the middle, all the
+pills to the right of it have to be shifted over one spot.  And if you want to 
+remove a pill, it's the same thing, you have to shift all the pills again to fill
+the gap.  With a list, the list could be any length, so you might have very little
+shifting of elements to do, or you might have to shift the entire list over, and 
+that can be a lot of work.  That's why adding or removing elements from lists runs 
+O(n), or linear, time.  
+
+5. What is the correct runtime for:
+
+  - Bubble Sort?   O(n^2)
+
+  - Quicksort?  O(n log n) 
+
+  - Merge Sort?  O(n log n)
+
+  - Insertion Sort? O(n^2)
+
+
+6. What is the difference between a tree and a graph?
+
+Well, all trees are graphs, but not all graphs are trees.  Each node in a 
+tree has one parent, and zero or more children.  In a graph, each node
+can have zero or more connections to other nodes.  A tree is a directed,
+acyclic graph, but graphs can be cyclic or acyclic, directed or undirected,
+and connected or disconnected.
+
+7. Using the Python implementation of Quicksort from the instructions:
+
+  Given the list [8, 4, 1, 6, 5, 2, 7, 3]:
+  When this function is initially called, what are the values of:
+
+    - lst - [8, 4, 1, 6, 5, 2, 7, 3]
+
+    - pivot - 5
+
+    - lo - []
+
+    - hi - []
+
+
+
+  When the quicksort is first called recursively on the `lo` list, what are the
+  values of:
+
+  - lst - [4, 1, 2, 3]
+
+  - pivot - 2
+
+  - lo - []
+
+  - hi - []
